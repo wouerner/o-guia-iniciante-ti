@@ -2,8 +2,6 @@
 
 [Guia do Iniciante em TI](#guia-do-iniciante-em-ti)
 
-[Guia do Iniciante em TI](#guia-do-iniciante-em-ti-1)
-
 [1\. Antes de Entrar na Faculdade](#1.-antes-de-entrar-na-faculdade)
 
 [Entendendo o Mundo da TI: Muito Mais do que 'Consertar Computadores'](#entendendo-o-mundo-da-ti:-muito-mais-do-que-'consertar-computadores')
@@ -54,7 +52,7 @@ Lengenda:
 
 ´
 
-# **Guia do Iniciante em TI** {#guia-do-iniciante-em-ti-1}
+# **Guia do Iniciante em TI**
 
 “Objetivo do guia: estou cansado de trabalhar com gente ruim, quero que a nova geração de profissionais de TI sejam os melhores do mundo, e tudo isso inicia com um guia correto para as suas habilidades.” 
 

@@ -81,6 +81,54 @@
                 display: none;
             }
         }
+
+        h2 > a[data-bs-toggle="collapse"],
+        h4 > a[data-bs-toggle="collapse"] {
+            display: block;
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 > a[data-bs-toggle="collapse"]::after,
+        h4 > a[data-bs-toggle="collapse"]::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 300;
+            line-height: 1;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        h2 > a[data-bs-toggle="collapse"]::after {
+            font-size: 2rem;
+        }
+
+        h4 > a[data-bs-toggle="collapse"]::after {
+            font-size: 1.5rem;
+        }
+
+        h2 > a[data-bs-toggle="collapse"][aria-expanded="true"]::after,
+        h4 > a[data-bs-toggle="collapse"][aria-expanded="true"]::after {
+            content: '−';
+        }
+
+        h2 > a[data-bs-toggle="collapse"][aria-expanded="true"],
+        h4 > a[data-bs-toggle="collapse"][aria-expanded="true"] {
+            background-color: #2c3034;
+            border-radius: .25rem;
+            padding-left: 1rem;
+        }
+
+        div.collapse.show {
+            background-color: #2c3034;
+            border: 1px solid #495057;
+            padding: 1.5rem;
+            border-radius: .25rem;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -117,7 +165,9 @@
     </nav>
 
     <main class="container my-5">
-        <h1 id="introducao">O Guia iniciante na TI</h1>
+        <h1 id="introducao">🧭 O Guia iniciante na TI</h1>
+
+        <p><small><em>Publicado em: 18 de setembro de 2025</em></small></p>
 
         <section>
             <blockquote>
@@ -128,263 +178,299 @@
         </section>
 
         <section id="perguntas-essenciais">
-            <h2>Perguntas Essenciais: Sua Bússola Antes de Começar</h2>
-            <p>Antes de mergulhar de cabeça, é fundamental que você seja honesto consigo mesmo sobre suas motivações. A área de TI é promissora, mas também exigente. Use as perguntas abaixo para uma autoavaliação.</p>
+            <h2><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-perguntas-essenciais" role="button" aria-expanded="false" aria-controls="collapse-perguntas-essenciais">🤔 Perguntas Essenciais: Sua Bússola Antes de Começar</a></h2>
+            <div class="collapse" id="collapse-perguntas-essenciais">
+                <p>Antes de mergulhar de cabeça, é fundamental que você seja honesto consigo mesmo sobre suas motivações. A área de TI é promissora, mas também exigente. Use as perguntas abaixo para uma autoavaliação.</p>
 
-            <h4>Estou entrando na área só pelo hype e pelo dinheiro?</h4>
-            <p>É inegável que a TI está em alta e os salários são atraentes. No entanto, essa não pode ser sua única motivação.</p>
-            <ul>
-                <li><strong>O Lado Bom:</strong> A estabilidade financeira e as oportunidades de crescimento são reais. Usar isso como um fator de decisão é inteligente.</li>
-                <li><strong>O Ponto de Atenção:</strong> A tecnologia muda em uma velocidade alucinante. Se você não tiver uma curiosidade genuína e uma vontade de aprender constantemente, o trabalho se tornará um fardo. O dinheiro pode não compensar a frustração de estudar algo novo a cada ano apenas por obrigação.</li>
-            </ul>
-            <p><em>Reflexão: Você se vê estudando novas tecnologias nas suas horas vagas por pura curiosidade ou isso soa como uma tortura?</em></p>
+                <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-hype" role="button" aria-expanded="false" aria-controls="collapse-hype">💰 Estou entrando na área só pelo hype e pelo dinheiro?</a></h4>
+                <div class="collapse" id="collapse-hype">
+                    <p>É inegável que a TI está em alta e os salários são atraentes. No entanto, essa não pode ser sua única motivação.</p>
+                    <ul>
+                        <li><strong>O Lado Bom:</strong> A estabilidade financeira e as oportunidades de crescimento são reais. Usar isso como um fator de decisão é inteligente.</li>
+                        <li><strong>O Ponto de Atenção:</strong> A tecnologia muda em uma velocidade alucinante. Se você não tiver uma curiosidade genuína e uma vontade de aprender constantemente, o trabalho se tornará um fardo. O dinheiro pode não compensar a frustração de estudar algo novo a cada ano apenas por obrigação.</li>
+                    </ul>
+                    <p><em>Reflexão: Você se vê estudando novas tecnologias nas suas horas vagas por pura curiosidade ou isso soa como uma tortura?</em></p>
+                </div>
 
-            <h4>Meu principal objetivo é trabalhar de casa?</h4>
-            <p>O trabalho remoto é uma das grandes vantagens da área de TI, mas é importante entender o que ele realmente significa.</p>
-            <ul>
-                <li><strong>O Lado Bom:</strong> A flexibilidade, a economia de tempo e a qualidade de vida são benefícios incríveis.</li>
-                <li><strong>O Ponto de Atenção:</strong> O home office exige um nível altíssimo de disciplina, organização e autogestão. A comunicação se torna um desafio e a solidão pode afetar algumas pessoas. Além disso, vagas para iniciantes em regime 100% remoto são mais competitivas e, muitas vezes, as empresas preferem um modelo híbrido para treinar novos talentos.</li>
-            </ul>
-            <p><em>Reflexão: Você consegue manter a produtividade sem um chefe olhando por cima do seu ombro? Você tem um espaço adequado para se concentrar em casa?</em></p>
+                <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-home-office" role="button" aria-expanded="false" aria-controls="collapse-home-office">🏠 Meu principal objetivo é trabalhar de casa?</a></h4>
+                <div class="collapse" id="collapse-home-office">
+                    <p>O trabalho remoto é uma das grandes vantagens da área de TI, mas é importante entender o que ele realmente significa.</p>
+                    <ul>
+                        <li><strong>O Lado Bom:</strong> A flexibilidade, a economia de tempo e a qualidade de vida são benefícios incríveis.</li>
+                        <li><strong>O Ponto de Atenção:</strong> O home office exige um nível altíssimo de disciplina, organização e autogestão. A comunicação se torna um desafio e a solidão pode afetar algumas pessoas. Além disso, vagas para iniciantes em regime 100% remoto são mais competitivas e, muitas vezes, as empresas preferem um modelo híbrido para treinar novos talentos.</li>
+                    </ul>
+                    <p><em>Reflexão: Você consegue manter a produtividade sem um chefe olhando por cima do seu ombro? Você tem um espaço adequado para se concentrar em casa?</em></p>
+                </div>
 
-            <h4>O que eu já sei é o bastante para começar?</h4>
-            <p>Muitos entram na área com algum conhecimento prévio, seja de um curso técnico, tutoriais no YouTube ou por hobby.</p>
-            <ul>
-                <li><strong>O Lado Bom:</strong> Qualquer conhecimento prévio é uma vantagem! Ele te dará uma base e te ajudará a absorver os conteúdos da faculdade com mais facilidade.</li>
-                <li><strong>O Ponto de Atenção:</strong> Não caia na armadilha de achar que já sabe tudo. A faculdade oferece uma base teórica sólida (como lógica, algoritmos e estruturas de dados) que é crucial para resolver problemas complexos no futuro. O conhecimento prático é ótimo, mas a teoria é o que te transformará em um profissional completo, e não apenas um "seguidor de tutoriais".</li>
-            </ul>
-            <p><em>Reflexão: Você está disposto a reaprender conceitos que achava que já dominava e a mergulhar em matérias teóricas que, à primeira vista, parecem "chatas"?</em></p>
+                <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-knowledge" role="button" aria-expanded="false" aria-controls="collapse-knowledge">🧠 O que eu já sei é o bastante para começar?</a></h4>
+                <div class="collapse" id="collapse-knowledge">
+                    <p>Muitos entram na área com algum conhecimento prévio, seja de um curso técnico, tutoriais no YouTube ou por hobby.</p>
+                    <ul>
+                        <li><strong>O Lado Bom:</strong> Qualquer conhecimento prévio é uma vantagem! Ele te dará uma base e te ajudará a absorver os conteúdos da faculdade com mais facilidade.</li>
+                        <li><strong>O Ponto de Atenção:</strong> Não caia na armadilha de achar que já sabe tudo. A faculdade oferece uma base teórica sólida (como lógica, algoritmos e estruturas de dados) que é crucial para resolver problemas complexos no futuro. O conhecimento prático é ótimo, mas a teoria é o que te transformará em um profissional completo, e não apenas um "seguidor de tutoriais".</li>
+                    </ul>
+                    <p><em>Reflexão: Você está disposto a reaprender conceitos que achava que já dominava e a mergulhar em matérias teóricas que, à primeira vista, parecem "chatas"?</em></p>
+                </div>
+            </div>
         </section>
 
         <section id="antes-da-faculdade">
-            <h2>Antes de Entrar na Faculdade</h2>
-            <p>A Tecnologia da Informação (TI) é a área responsável por gerenciar, processar e armazenar dados e informações. Ela é a espinha dorsal de quase tudo o que usamos hoje, desde aplicativos de celular até sistemas bancários.</p>
-            <p>Esqueça a ideia de que TI se resume a formatar computadores ou instalar programas. A área é dividida em diversos campos de atuação, e é importante conhecer os principais para entender onde você se encaixa.</p>
+            <h2><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-antes-da-faculdade" role="button" aria-expanded="false" aria-controls="collapse-antes-da-faculdade">🎓 Antes de Entrar na Faculdade</a></h2>
+            <div class="collapse" id="collapse-antes-da-faculdade">
+                <p>A Tecnologia da Informação (TI) é a área responsável por gerenciar, processar e armazenar dados e informações. Ela é a espinha dorsal de quase tudo o que usamos hoje, desde aplicativos de celular até sistemas bancários.</p>
+                <p>Esqueça a ideia de que TI se resume a formatar computadores ou instalar programas. A área é dividida em diversos campos de atuação, e é importante conhecer os principais para entender onde você se encaixa.</p>
 
-            <h3 id="subareas">Subáreas</h3>
-            <p>O desenvolvimento de software vai muito além de "programar". A escolha de uma subárea muitas vezes define o tipo de projeto, as linguagens de programação e as ferramentas que você vai usar no dia a dia.</p>
+                <h3 id="subareas">📂 Subáreas</h3>
+                <p>O desenvolvimento de software vai muito além de "programar". A escolha de uma subárea muitas vezes define o tipo de projeto, as linguagens de programação e as ferramentas que você vai usar no dia a dia.</p>
 
-            <article id="dev-web">
-                <h4>Desenvolvimento Web</h4>
-                <p class="informal-quote">“Eu conheço profundamente essa área com atuação de mais de 15 anos”</p>
-                <p>Esta é a subárea mais popular, focada na criação de sites, sistemas e aplicações que rodam em navegadores. Ela se divide em duas frentes principais:</p>
-                <ul>
-                    <li><strong>Front-end:</strong> O desenvolvedor front-end é responsável por tudo que o usuário vê e interage na tela. Ele usa tecnologias como HTML, CSS e JavaScript.</li>
-                    <li><strong>Back-end:</strong> O desenvolvedor back-end é responsável pela lógica por trás da aplicação. Ele lida com bancos de dados, servidores, segurança e toda a parte que o usuário não vê. Suas ferramentas incluem linguagens como Python, Java, Node.js, PHP e frameworks como Django, Spring Boot e Laravel.</li>
-                    <li><strong>Full-stack:</strong> É um profissional versátil que domina tanto o front-end quanto o back-end.</li>
-                </ul>
-            </article>
+                <article id="dev-web">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-dev-web" role="button" aria-expanded="false" aria-controls="collapse-dev-web">🌐 Desenvolvimento Web</a></h4>
+                    <div class="collapse" id="collapse-dev-web">
+                        <p class="informal-quote">“Eu conheço profundamente essa área com atuação de mais de 15 anos”</p>
+                        <p>Esta é a subárea mais popular, focada na criação de sites, sistemas e aplicações que rodam em navegadores. Ela se divide em duas frentes principais:</p>
+                        <ul>
+                            <li><strong>Front-end:</strong> O desenvolvedor front-end é responsável por tudo que o usuário vê e interage na tela. Ele usa tecnologias como HTML, CSS e JavaScript.</li>
+                            <li><strong>Back-end:</strong> O desenvolvedor back-end é responsável pela lógica por trás da aplicação. Ele lida com bancos de dados, servidores, segurança e toda a parte que o usuário não vê. Suas ferramentas incluem linguagens como Python, Java, Node.js, PHP e frameworks como Django, Spring Boot e Laravel.</li>
+                            <li><strong>Full-stack:</strong> É um profissional versátil que domina tanto o front-end quanto o back-end.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article id="dev-mobile">
-                <h4>Desenvolvimento Mobile</h4>
-                <p>Esta subárea foca na criação de aplicativos para dispositivos móveis.</p>
-                <ul>
-                    <li><strong>Desenvolvimento Nativo:</strong> Criação de aplicativos específicos para cada sistema operacional, por exemplo, para iOS (Swift e Objective-C) e para Android (Java e Kotlin).</li>
-                    <li><strong>Desenvolvimento Híbrido:</strong> Criação de aplicativos que funcionam em ambos os sistemas (iOS e Android) usando uma única base de código, com frameworks como React Native e Flutter.</li>
-                </ul>
-            </article>
-            
-            <article id="dev-jogos">
-                <h4>Desenvolvimento de Jogos - GameDev</h4>
-                <p class="informal-quote">“Quem não ama jogos? mas infelizmente é uma área ainda em desenvolvimento no brasil”</p>
-                <p>Cria videogames para diversas plataformas. Requer conhecimentos em lógica de programação, matemática, física e, muitas vezes, motores de jogo como Unity ou Unreal Engine.</p>
-                <h5>Game Design</h5>
-                <p>O Game Designer é o arquiteto do jogo. Sua função é conceber a ideia principal, as regras e a experiência do jogador. Pense nele como o diretor de um filme, que define a visão geral e se certifica de que todos os elementos funcionem em harmonia.</p>
-                <ul>
-                    <li><strong>Level Designer:</strong> Cria os cenários, mapas e desafios do jogo.</li>
-                    <li><strong>Narrative Designer:</strong> Foca na história e na escrita do roteiro.</li>
-                    <li><strong>Systems Designer:</strong> Desenvolve os sistemas e as regras que regem o jogo.</li>
-                </ul>
-                <h5>Programação</h5>
-                <p>Os programadores são responsáveis por transformar as ideias do Game Designer em código funcional.</p>
-                <ul>
-                    <li><strong>AI Programmer:</strong> Cria a inteligência artificial dos personagens não-jogáveis (NPCs).</li>
-                    <li><strong>Gameplay Programmer:</strong> Implementa as mecânicas centrais do jogo.</li>
-                    <li><strong>Network Programmer:</strong> É o especialista em jogos multiplayer.</li>
-                </ul>
-                <h5>Arte e Animação</h5>
-                <p>É a equipe de arte que dá vida visual ao jogo.</p>
-                <ul>
-                    <li><strong>Concept Artist:</strong> Cria as artes conceituais para definir o estilo visual.</li>
-                    <li><strong>3D Modeler:</strong> Constrói os modelos tridimensionais.</li>
-                    <li><strong>Animator:</strong> Dá movimento aos modelos 3D e 2D.</li>
-                    <li><strong>UI/UX Designer:</strong> Foca na interface e na experiência do usuário.</li>
-                </ul>
-                <h5>Áudio</h5>
-                <p>A equipe de áudio é crucial para a imersão.</p>
-                <ul>
-                    <li><strong>Sound Designer:</strong> Cria todos os efeitos sonoros do jogo.</li>
-                    <li><strong>Composer:</strong> Compõe a trilha sonora e as músicas.</li>
-                </ul>
-                <h5>Outras Áreas Importantes</h5>
-                <ul>
-                    <li><strong>Qualidade e Teste (QA):</strong> Buscam bugs, falhas e problemas de jogabilidade.</li>
-                    <li><strong>Produtor:</strong> Gerencia o projeto.</li>
-                </ul>
-            </article>
+                <article id="dev-mobile">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-dev-mobile" role="button" aria-expanded="false" aria-controls="collapse-dev-mobile">📱 Desenvolvimento Mobile</a></h4>
+                    <div class="collapse" id="collapse-dev-mobile">
+                        <p>Esta subárea foca na criação de aplicativos para dispositivos móveis.</p>
+                        <ul>
+                            <li><strong>Desenvolvimento Nativo:</strong> Criação de aplicativos específicos para cada sistema operacional, por exemplo, para iOS (Swift e Objective-C) e para Android (Java e Kotlin).</li>
+                            <li><strong>Desenvolvimento Híbrido:</strong> Criação de aplicativos que funcionam em ambos os sistemas (iOS e Android) usando uma única base de código, com frameworks como React Native e Flutter.</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <article id="dev-jogos">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-dev-jogos" role="button" aria-expanded="false" aria-controls="collapse-dev-jogos">🎮 Desenvolvimento de Jogos - GameDev</a></h4>
+                    <div class="collapse" id="collapse-dev-jogos">
+                        <p class="informal-quote">“Quem não ama jogos? mas infelizmente é uma área ainda em desenvolvimento no brasil”</p>
+                        <p>Cria videogames para diversas plataformas. Requer conhecimentos em lógica de programação, matemática, física e, muitas vezes, motores de jogo como Unity ou Unreal Engine.</p>
+                        <h5>Game Design</h5>
+                        <p>O Game Designer é o arquiteto do jogo. Sua função é conceber a ideia principal, as regras e a experiência do jogador. Pense nele como o diretor de um filme, que define a visão geral e se certifica de que todos os elementos funcionem em harmonia.</p>
+                        <ul>
+                            <li><strong>Level Designer:</strong> Cria os cenários, mapas e desafios do jogo.</li>
+                            <li><strong>Narrative Designer:</strong> Foca na história e na escrita do roteiro.</li>
+                            <li><strong>Systems Designer:</strong> Desenvolve os sistemas e as regras que regem o jogo.</li>
+                        </ul>
+                        <h5>Programação</h5>
+                        <p>Os programadores são responsáveis por transformar as ideias do Game Designer em código funcional.</p>
+                        <ul>
+                            <li><strong>AI Programmer:</strong> Cria a inteligência artificial dos personagens não-jogáveis (NPCs).</li>
+                            <li><strong>Gameplay Programmer:</strong> Implementa as mecânicas centrais do jogo.</li>
+                            <li><strong>Network Programmer:</strong> É o especialista em jogos multiplayer.</li>
+                        </ul>
+                        <h5>Arte e Animação</h5>
+                        <p>É a equipe de arte que dá vida visual ao jogo.</p>
+                        <ul>
+                            <li><strong>Concept Artist:</strong> Cria as artes conceituais para definir o estilo visual.</li>
+                            <li><strong>3D Modeler:</strong> Constrói os modelos tridimensionais.</li>
+                            <li><strong>Animator:</strong> Dá movimento aos modelos 3D e 2D.</li>
+                            <li><strong>UI/UX Designer:</strong> Foca na interface e na experiência do usuário.</li>
+                        </ul>
+                        <h5>Áudio</h5>
+                        <p>A equipe de áudio é crucial para a imersão.</p>
+                        <ul>
+                            <li><strong>Sound Designer:</strong> Cria todos os efeitos sonoros do jogo.</li>
+                            <li><strong>Composer:</strong> Compõe a trilha sonora e as músicas.</li>
+                        </ul>
+                        <h5>Outras Áreas Importantes</h5>
+                        <ul>
+                            <li><strong>Qualidade e Teste (QA):</strong> Buscam bugs, falhas e problemas de jogabilidade.</li>
+                            <li><strong>Produtor:</strong> Gerencia o projeto.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article id="sistemas-embarcados">
-                <h4>Sistemas Embarcados - Computação Científica - Grande Escala</h4>
-                <p class="informal-quote">“se voce encontrar uma vaga dessas, me avisa que eu quero também, são raras e pagam muito bem!(foi isso que escutei de amigos.)”</p>
-                <ul>
-                    <li><strong>Sistemas Embarcados:</strong> Programação para dispositivos que não são computadores, como microcontroladores e robôs.</li>
-                    <li><strong>Computação Científica:</strong> Uso da programação para resolver problemas complexos nas áreas de ciência, engenharia e matemática.</li>
-                    <li><strong>Desenvolvimento de Sistemas de Grande Escala:</strong> Criação de sistemas para grandes empresas que precisam processar um volume massivo de dados.</li>
-                </ul>
-            </article>
+                <article id="sistemas-embarcados">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-sistemas-embarcados" role="button" aria-expanded="false" aria-controls="collapse-sistemas-embarcados">🔬 Sistemas Embarcados - Computação Científica - Grande Escala</a></h4>
+                    <div class="collapse" id="collapse-sistemas-embarcados">
+                        <p class="informal-quote">“se voce encontrar uma vaga dessas, me avisa que eu quero também, são raras e pagam muito bem!(foi isso que escutei de amigos.)”</p>
+                        <ul>
+                            <li><strong>Sistemas Embarcados:</strong> Programação para dispositivos que não são computadores, como microcontroladores e robôs.</li>
+                            <li><strong>Computação Científica:</strong> Uso da programação para resolver problemas complexos nas áreas de ciência, engenharia e matemática.</li>
+                            <li><strong>Desenvolvimento de Sistemas de Grande Escala:</strong> Criação de sistemas para grandes empresas que precisam processar um volume massivo de dados.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article id="rpa">
-                <h4>Desenvolvimento RPA, automação e Low-code e No-code.</h4>
-                <p>Essa área da tecnologia está revolucionando a forma como o trabalho é feito, permitindo que processos complexos sejam automatizados e que a criação de software se torne acessível a mais pessoas.</p>
-                <h5>Automação de Processos Robóticos (RPA)</h5>
-                <p>RPA, sigla para Robotic Process Automation, utiliza softwares — os "robôs" ou "bots" — para imitar as ações humanas em tarefas repetitivas e baseadas em regras.</p>
-                <ul>
-                    <li><strong>RPA Assistida:</strong> O robô de software atua como um assistente, sendo ativado pelo usuário.</li>
-                    <li><strong>RPA Não Assistida:</strong> O robô trabalha de forma autônoma, seguindo um cronograma.</li>
-                    <li><strong>RPA Híbrida:</strong> Combina os dois modelos.</li>
-                </ul>
-                <h5>Low-Code e No-Code</h5>
-                <p>Essas duas abordagens são a base da democratização da tecnologia.</p>
-                <ul>
-                    <li><strong>No-Code (Sem Código):</strong> Permite a criação de soluções digitais sem escrever uma única linha de código.</li>
-                    <li><strong>Low-Code (Baixo Código):</strong> Exige um conhecimento mínimo de programação, mas acelera drasticamente o desenvolvimento.</li>
-                </ul>
-            </article>
+                <article id="rpa">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-rpa" role="button" aria-expanded="false" aria-controls="collapse-rpa">🤖 Desenvolvimento RPA, automação e Low-code e No-code.</a></h4>
+                    <div class="collapse" id="collapse-rpa">
+                        <p>Essa área da tecnologia está revolucionando a forma como o trabalho é feito, permitindo que processos complexos sejam automatizados e que a criação de software se torne acessível a mais pessoas.</p>
+                        <h5>Automação de Processos Robóticos (RPA)</h5>
+                        <p>RPA, sigla para Robotic Process Automation, utiliza softwares — os "robôs" ou "bots" — para imitar as ações humanas em tarefas repetitivas e baseadas em regras.</p>
+                        <ul>
+                            <li><strong>RPA Assistida:</strong> O robô de software atua como um assistente, sendo ativado pelo usuário.</li>
+                            <li><strong>RPA Não Assistida:</strong> O robô trabalha de forma autônoma, seguindo um cronograma.</li>
+                            <li><strong>RPA Híbrida:</strong> Combina os dois modelos.</li>
+                        </ul>
+                        <h5>Low-Code e No-Code</h5>
+                        <p>Essas duas abordagens são a base da democratização da tecnologia.</p>
+                        <ul>
+                            <li><strong>No-Code (Sem Código):</strong> Permite a criação de soluções digitais sem escrever uma única linha de código.</li>
+                            <li><strong>Low-Code (Baixo Código):</strong> Exige um conhecimento mínimo de programação, mas acelera drasticamente o desenvolvimento.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article id="qa">
-                <h4>QA</h4>
-                <p>A área de Qualidade e Teste (QA) é muito mais do que apenas encontrar erros. Ela se divide em subáreas especializadas.</p>
-                <h5>Testes Manuais</h5>
-                <ul>
-                    <li><strong>Testes Exploratórios:</strong> O testador explora o software sem um roteiro pré-definido.</li>
-                    <li><strong>Testes de Usabilidade:</strong> Focados em garantir que o software seja intuitivo e fácil de usar.</li>
-                    <li><strong>Testes de Regressão Manual:</strong> Verificam manualmente se as novas funcionalidades não quebraram o sistema.</li>
-                </ul>
-                <h5>Testes Automatizados</h5>
-                <ul>
-                    <li><strong>Automação de Testes de Regressão:</strong> Cria scripts para executar repetidamente os testes mais importantes.</li>
-                    <li><strong>Testes de API:</strong> Focados em testar as APIs (Application Programming Interfaces).</li>
-                    <li><strong>Testes de Interface do Usuário (UI):</strong> Automatizam a interação com a interface gráfica.</li>
-                </ul>
-                <h5>Testes Não Funcionais</h5>
-                <ul>
-                    <li><strong>Testes de Performance:</strong> Medem a velocidade, estabilidade e capacidade de resposta.</li>
-                    <li><strong>Testes de Segurança:</strong> Procuram por vulnerabilidades no software.</li>
-                    <li><strong>Testes de Acessibilidade:</strong> Garantem que o software possa ser utilizado por pessoas com deficiências.</li>
-                </ul>
-            </article>
+                <article id="qa">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-qa" role="button" aria-expanded="false" aria-controls="collapse-qa">✔️ QA</a></h4>
+                    <div class="collapse" id="collapse-qa">
+                        <p>A área de Qualidade e Teste (QA) é muito mais do que apenas encontrar erros. Ela se divide em subáreas especializadas.</p>
+                        <h5>Testes Manuais</h5>
+                        <ul>
+                            <li><strong>Testes Exploratórios:</strong> O testador explora o software sem um roteiro pré-definido.</li>
+                            <li><strong>Testes de Usabilidade:</strong> Focados em garantir que o software seja intuitivo e fácil de usar.</li>
+                            <li><strong>Testes de Regressão Manual:</strong> Verificam manualmente se as novas funcionalidades não quebraram o sistema.</li>
+                        </ul>
+                        <h5>Testes Automatizados</h5>
+                        <ul>
+                            <li><strong>Automação de Testes de Regressão:</strong> Cria scripts para executar repetidamente os testes mais importantes.</li>
+                            <li><strong>Testes de API:</strong> Focados em testar as APIs (Application Programming Interfaces).</li>
+                            <li><strong>Testes de Interface do Usuário (UI):</strong> Automatizam a interação com a interface gráfica.</li>
+                        </ul>
+                        <h5>Testes Não Funcionais</h5>
+                        <ul>
+                            <li><strong>Testes de Performance:</strong> Medem a velocidade, estabilidade e capacidade de resposta.</li>
+                            <li><strong>Testes de Segurança:</strong> Procuram por vulnerabilidades no software.</li>
+                            <li><strong>Testes de Acessibilidade:</strong> Garantem que o software possa ser utilizado por pessoas com deficiências.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article id="seguranca">
-                <h4>Segurança da Informação</h4>
-                <p class="informal-quote">“Não, você não vai se transformar no Mr Robot, mas pode ser bom a ponto de ganhar mais de 20 mil por mês”</p>
-                <p>É a área que protege sistemas e dados contra ataques cibernéticos.</p>
-                <h5>Subáreas da Segurança da Informação</h5>
-                <ul>
-                    <li><strong>Cibersegurança (Cybersecurity):</strong> Proteção de sistemas, redes e dados contra ataques digitais.</li>
-                    <li><strong>Segurança de Redes (Network Security):</strong> Proteção da infraestrutura de rede.</li>
-                    <li><strong>Segurança de Aplicações (Application Security) (AppSec):</strong> Garantia de que os softwares e sites sejam seguros.</li>
-                    <li><strong>Análise de Vulnerabilidades e Teste de Invasão (Penetration Testing) (PenTest):</strong> O "hacker ético".</li>
-                    <li><strong>Governança, Risco e Compliance (GRC):</strong> Área estratégica que garante o seguimento de políticas e normas.</li>
-                    <li><strong>Resposta a Incidentes e Forense Digital (Policia Digital):</strong> Investigação de ataques.</li>
-                </ul>
-            </article>
+                <article id="seguranca">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-seguranca" role="button" aria-expanded="false" aria-controls="collapse-seguranca">🔒 Segurança da Informação</a></h4>
+                    <div class="collapse" id="collapse-seguranca">
+                        <p class="informal-quote">“Não, você não vai se transformar no Mr Robot, mas pode ser bom a ponto de ganhar mais de 20 mil por mês”</p>
+                        <p>É a área que protege sistemas e dados contra ataques cibernéticos.</p>
+                        <h5>Subáreas da Segurança da Informação</h5>
+                        <ul>
+                            <li><strong>Cibersegurança (Cybersecurity):</strong> Proteção de sistemas, redes e dados contra ataques digitais.</li>
+                            <li><strong>Segurança de Redes (Network Security):</strong> Proteção da infraestrutura de rede.</li>
+                            <li><strong>Segurança de Aplicações (Application Security) (AppSec):</strong> Garantia de que os softwares e sites sejam seguros.</li>
+                            <li><strong>Análise de Vulnerabilidades e Teste de Invasão (Penetration Testing) (PenTest):</strong> O "hacker ético".</li>
+                            <li><strong>Governança, Risco e Compliance (GRC):</strong> Área estratégica que garante o seguimento de políticas e normas.</li>
+                            <li><strong>Resposta a Incidentes e Forense Digital (Policia Digital):</strong> Investigação de ataques.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article id="ciencia-dados">
-                <h4>Ciência de Dados e Inteligência Artificial</h4>
-                <p class="informal-quote">“Essa é a área da moda em 2025, e acredito que vai continuar por pelo menos 10 anos! Oremos para IA não roubar nossos empregos”</p>
-                <p>Profissionais dessa área usam dados para extrair informações valiosas, criar previsões e desenvolver modelos de machine learning.</p>
-                <h5>Subáreas de Ciência de Dados e Inteligência Artificial</h5>
-                <ul>
-                    <li><strong>Aprendizado de Máquina (Machine Learning):</strong> Dar aos computadores a capacidade de aprender a partir de dados.</li>
-                    <li><strong>Engenharia de Dados (Data Engineering):</strong> Constrói e mantém a infraestrutura de dados.</li>
-                    <li><strong>Análise de Dados (Data Analytics):</strong> Foca na análise de dados já existentes para gerar relatórios.</li>
-                    <li><strong>Processamento de Linguagem Natural (NLP):</strong> Ensina os computadores a entenderem a linguagem humana.</li>
-                    <li><strong>Deep Learning:</strong> Campo avançado do Machine Learning que utiliza redes neurais artificiais.</li>
-                </ul>
-            </article>
+                <article id="ciencia-dados">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-ciencia-dados" role="button" aria-expanded="false" aria-controls="collapse-ciencia-dados">📊 Ciência de Dados e Inteligência Artificial</a></h4>
+                    <div class="collapse" id="collapse-ciencia-dados">
+                        <p class="informal-quote">“Essa é a área da moda em 2025, e acredito que vai continuar por pelo menos 10 anos! Oremos para IA não roubar nossos empregos”</p>
+                        <p>Profissionais dessa área usam dados para extrair informações valiosas, criar previsões e desenvolver modelos de machine learning.</p>
+                        <h5>Subáreas de Ciência de Dados e Inteligência Artificial</h5>
+                        <ul>
+                            <li><strong>Aprendizado de Máquina (Machine Learning):</strong> Dar aos computadores a capacidade de aprender a partir de dados.</li>
+                            <li><strong>Engenharia de Dados (Data Engineering):</strong> Constrói e mantém a infraestrutura de dados.</li>
+                            <li><strong>Análise de Dados (Data Analytics):</strong> Foca na análise de dados já existentes para gerar relatórios.</li>
+                            <li><strong>Processamento de Linguagem Natural (NLP):</strong> Ensina os computadores a entenderem a linguagem humana.</li>
+                            <li><strong>Deep Learning:</strong> Campo avançado do Machine Learning que utiliza redes neurais artificiais.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <article id="infra-redes">
-                <h4>Infraestrutura e Redes</h4>
-                <p class="informal-quote">“Não gosto tanto de hardware a ponte de fazer isso meu trabalho, mas confesso que temos muitas oportunidades de crescimento do mercado no brasil”</p>
-                <p>Essa área cuida de toda a base tecnológica de uma empresa.</p>
-                <h5>Subáreas de Infraestrutura e Redes</h5>
-                <ul>
-                    <li><strong>Administração de Sistemas e Servidores:</strong> Gerenciamento dos servidores.</li>
-                    <li><strong>Redes de Computadores:</strong> Projeta, implementa e gerencia a comunicação entre dispositivos.</li>
-                    <li><strong>Computação em Nuvem (Cloud Computing):</strong> Trabalha com serviços de plataformas como AWS, Azure ou Google Cloud.</li>
-                    <li><strong>Virtualização:</strong> Criação de versões virtuais de recursos de hardware.</li>
-                    <li><strong>DevOps:</strong> Une as equipes de desenvolvimento e operações.</li>
-                    <li><strong>Suporte Técnico e Help Desk:</strong> Linha de frente da área de infraestrutura.</li>
-                </ul>
-            </article>
+                <article id="infra-redes">
+                    <h4><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-infra-redes" role="button" aria-expanded="false" aria-controls="collapse-infra-redes">☁️ Infraestrutura e Redes</a></h4>
+                    <div class="collapse" id="collapse-infra-redes">
+                        <p class="informal-quote">“Não gosto tanto de hardware a ponte de fazer isso meu trabalho, mas confesso que temos muitas oportunidades de crescimento do mercado no brasil”</p>
+                        <p>Essa área cuida de toda a base tecnológica de uma empresa.</p>
+                        <h5>Subáreas de Infraestrutura e Redes</h5>
+                        <ul>
+                            <li><strong>Administração de Sistemas e Servidores:</strong> Gerenciamento dos servidores.</li>
+                            <li><strong>Redes de Computadores:</strong> Projeta, implementa e gerencia a comunicação entre dispositivos.</li>
+                            <li><strong>Computação em Nuvem (Cloud Computing):</strong> Trabalha com serviços de plataformas como AWS, Azure ou Google Cloud.</li>
+                            <li><strong>Virtualização:</strong> Criação de versões virtuais de recursos de hardware.</li>
+                            <li><strong>DevOps:</strong> Une as equipes de desenvolvimento e operações.</li>
+                            <li><strong>Suporte Técnico e Help Desk:</strong> Linha de frente da área de infraestrutura.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <section id="escolhendo-curso">
-            <h2>Escolhendo o Curso Certo: Bacharelado, Tecnólogo ou Licenciatura?</h2>
-            <p class="informal-quote">“Desde que você estude de verdade, tanto faz seu titulo”</p>
-            <p>A escolha do curso vai depender muito dos seus objetivos de carreira e do tempo que você tem para se dedicar aos estudos.</p>
-            <ul>
-                <li><strong>Bacharelado:</strong> Duração de 4 a 5 anos, oferece uma base teórica e matemática sólida.</li>
-                <li><strong>Tecnólogo:</strong> Duração de 2 a 3 anos, cursos mais práticos e focados.</li>
-                <li><strong>Licenciatura:</strong> Focada na formação de professores.</li>
-            </ul>
+            <h2><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-escolhendo-curso" role="button" aria-expanded="false" aria-controls="collapse-escolhendo-curso">📚 Escolhendo o Curso Certo: Bacharelado, Tecnólogo ou Licenciatura?</a></h2>
+            <div class="collapse" id="collapse-escolhendo-curso">
+                <p class="informal-quote">“Desde que você estude de verdade, tanto faz seu titulo”</p>
+                <p>A escolha do curso vai depender muito dos seus objetivos de carreira e do tempo que você tem para se dedicar aos estudos.</p>
+                <ul>
+                    <li><strong>Bacharelado:</strong> Duração de 4 a 5 anos, oferece uma base teórica e matemática sólida.</li>
+                    <li><strong>Tecnólogo:</strong> Duração de 2 a 3 anos, cursos mais práticos e focados.</li>
+                    <li><strong>Licenciatura:</strong> Focada na formação de professores.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="pesquisando-instituicao">
-            <h2>Pesquisando a Instituição de Ensino: Onde Estudar?</h2>
-            <p>A faculdade onde você estuda pode fazer uma grande diferença na sua carreira. Ao pesquisar, leve em conta os seguintes pontos:</p>
-            <ul>
-                <li><strong>Grade Curricular:</strong> A grade de matérias está atualizada?</li>
-                <li><strong>Corpo Docente:</strong> Pesquise sobre os professores. Eles têm experiência prática na área?</li>
-                <li><strong>Reputação no Mercado:</strong> A faculdade é bem vista pelas empresas?</li>
-                <li><strong>Infraestrutura:</strong> A instituição oferece laboratórios e equipamentos adequados?</li>
-            </ul>
+            <h2><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-pesquisando-instituicao" role="button" aria-expanded="false" aria-controls="collapse-pesquisando-instituicao">🏫 Pesquisando a Instituição de Ensino: Onde Estudar?</a></h2>
+            <div class="collapse" id="collapse-pesquisando-instituicao">
+                <p>A faculdade onde você estuda pode fazer uma grande diferença na sua carreira. Ao pesquisar, leve em conta os seguintes pontos:</p>
+                <ul>
+                    <li><strong>Grade Curricular:</strong> A grade de matérias está atualizada?</li>
+                    <li><strong>Corpo Docente:</strong> Pesquise sobre os professores. Eles têm experiência prática na área?</li>
+                    <li><strong>Reputação no Mercado:</strong> A faculdade é bem vista pelas empresas?</li>
+                    <li><strong>Infraestrutura:</strong> A instituição oferece laboratórios e equipamentos adequados?</li>
+                </ul>
+            </div>
         </section>
 
         <section id="durante-graduacao">
-            <h2>Durante a Graduação</h2>
-            <p>A faculdade de TI é uma jornada intensa, e a forma como você aproveita cada semestre pode definir o seu futuro profissional.</p>
-            <h3>A Vida de Estudante de TI: Dicas para o Primeiro Ano e Além</h3>
-            <ul>
-                <li>Entenda a Lógica, não Decore o Código.</li>
-                <li>Pratique Constantemente.</li>
-                <li>Aprenda a Usar a Internet como Ferramenta.</li>
-                <li>Não Tenha Medo de Errar.</li>
-                <li>Forme Grupos de Estudo.</li>
-            </ul>
-            <h3>Aproveitando a Faculdade ao Máximo: Projetos, Hackathons e Eventos</h3>
-            <ul>
-                <li>Participe de Projetos Pessoais.</li>
-                <li>Grupos de Pesquisa e Extensão.</li>
-                <li>Hackathons e Competições.</li>
-                <li>Eventos e Palestras.</li>
-            </ul>
-            <h3>Estágios e Experiência Profissional: A Ponte para o Mercado</h3>
-            <p>O estágio é a sua primeira grande oportunidade de entrar no mercado de trabalho.</p>
-            <h3>Networking: Construa Sua Rede de Contatos</h3>
-            <p>O networking na área de TI é fundamental.</p>
+            <h2><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-durante-graduacao" role="button" aria-expanded="false" aria-controls="collapse-durante-graduacao">👨‍🎓 Durante a Graduação</a></h2>
+            <div class="collapse" id="collapse-durante-graduacao">
+                <p>A faculdade de TI é uma jornada intensa, e a forma como você aproveita cada semestre pode definir o seu futuro profissional.</p>
+                <h3>💡 A Vida de Estudante de TI: Dicas para o Primeiro Ano e Além</h3>
+                <ul>
+                    <li>Entenda a Lógica, não Decore o Código.</li>
+                    <li>Pratique Constantemente.</li>
+                    <li>Aprenda a Usar a Internet como Ferramenta.</li>
+                    <li>Não Tenha Medo de Errar.</li>
+                    <li>Forme Grupos de Estudo.</li>
+                </ul>
+                <h3>🚀 Aproveitando a Faculdade ao Máximo: Projetos, Hackathons e Eventos</h3>
+                <ul>
+                    <li>Participe de Projetos Pessoais.</li>
+                    <li>Grupos de Pesquisa e Extensão.</li>
+                    <li>Hackathons e Competições.</li>
+                    <li>Eventos e Palestras.</li>
+                </ul>
+                <h3>🌉 Estágios e Experiência Profissional: A Ponte para o Mercado</h3>
+                <p>O estágio é a sua primeira grande oportunidade de entrar no mercado de trabalho.</p>
+                <h3>🤝 Networking: Construa Sua Rede de Contatos</h3>
+                <p>O networking na área de TI é fundamental.</p>
+            </div>
         </section>
 
         <section id="o-futuro">
-            <h2>O Futuro na Área de TI</h2>
-            <p>Após a formatura, o mundo da tecnologia se abre para você. A aprendizagem é contínua.</p>
-            <h3>Especializações: Onde Você Quer Chegar?</h3>
-            <p>Algumas áreas estão em alta demanda:</p>
-            <ul>
-                <li>Inteligência Artificial (IA) e Machine Learning</li>
-                <li>Cibersegurança</li>
-                <li>Computação em Nuvem (Cloud Computing)</li>
-                <li>Desenvolvimento Mobile</li>
-                <li>DevOps</li>
-            </ul>
-            <h3>Certificações: Um Passo a Mais na Sua Carreira</h3>
-            <p>As certificações são provas de que você domina uma tecnologia ou metodologia específica.</p>
-            <h3>O Mercado de Trabalho em TI: Tendências, Salários e Como se Preparar</h3>
-            <p>O mercado de TI no Brasil e no mundo está aquecido.</p>
-            <ul>
-                <li><strong>Salários:</strong> A remuneração é competitiva.</li>
-                <li><strong>Preparando-se para o Futuro:</strong> Mantenha seu portfólio atualizado, prepare-se para entrevistas e aprenda inglês.</li>
-            </ul>
+            <h2><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse-o-futuro" role="button" aria-expanded="false" aria-controls="collapse-o-futuro">🚀 O Futuro na Área de TI</a></h2>
+            <div class="collapse" id="collapse-o-futuro">
+                <p>Após a formatura, o mundo da tecnologia se abre para você. A aprendizagem é contínua.</p>
+                <h3>🎯 Especializações: Onde Você Quer Chegar?</h3>
+                <p>Algumas áreas estão em alta demanda:</p>
+                <ul>
+                    <li>Inteligência Artificial (IA) e Machine Learning</li>
+                    <li>Cibersegurança</li>
+                    <li>Computação em Nuvem (Cloud Computing)</li>
+                    <li>Desenvolvimento Mobile</li>
+                    <li>DevOps</li>
+                </ul>
+                <h3>📜 Certificações: Um Passo a Mais na Sua Carreira</h3>
+                <p>As certificações são provas de que você domina uma tecnologia ou metodologia específica.</p>
+                <h3>💼 O Mercado de Trabalho em TI: Tendências, Salários e Como se Preparar</h3>
+                <p>O mercado de TI no Brasil e no mundo está aquecido.</p>
+                <ul>
+                    <li><strong>Salários:</strong> A remuneração é competitiva.</li>
+                    <li><strong>Preparando-se para o Futuro:</strong> Mantenha seu portfólio atualizado, prepare-se para entrevistas e aprenda inglês.</li>
+                </ul>
+            </div>
         </section>
 
     </main>
